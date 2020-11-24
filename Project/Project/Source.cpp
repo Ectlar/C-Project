@@ -66,7 +66,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 		}
 		if (string(action) == "largest") {
 			for (int a = 0; a < size; a++) {
-    				if (array[a] >= largest) {
+    				if (array[a] > largest) {
         				largest = array[a];
     				}
 			}
