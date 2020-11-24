@@ -47,7 +47,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 
 		if (string(action) == "display") {
 			for (int a = 0; a < size; a++) {
-        		cout << array[a] << ', ';
+        		cout << array[a] << ' ';
 			}
 		}
 
@@ -92,7 +92,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
     			}
     			cout << "Scaled-up array: ";
     			for (int a = 0; a < size; a++) {
-        			cout << array[a] << ', ';
+        			cout << array[a] << ' ';
 			}
 		}
 		if (string(action) == "reverse") {
