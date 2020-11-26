@@ -61,7 +61,6 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 			}
 			cout << "The total is: " << total;
 			total = 0;
-			cin.ignore(100, '\n'); //It prevents the men from running to times in this instance (the others work fine)
 		}
 
 		if (string(action) == "average") {
