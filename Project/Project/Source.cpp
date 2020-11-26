@@ -137,6 +137,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 			}
 
 			cout << "\n" << endl;
+			cin.ignore(100, '\n');
 		}
 
 	}
