@@ -29,6 +29,8 @@ int main() {
 	int counter = 0;
 	int* array2;
 	int find = 0;
+	int largest = 0;
+	int scale = 0;
 	array2 = new int[size];
 	//array2 = array;
 	int b = size;
@@ -46,7 +48,9 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 		}
 
 		if (string(action) == "display") {
-			
+			for (int a = 0; a < size; a++) {
+				cout << array[a] << ' ';
+			}
 		}
 
 		if (string(action) == "total") {
@@ -57,6 +61,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 			}
 			cout << "The total is: " << total;
 			total = 0;
+			cin.ignore(100, '\n'); //It prevents the men from running to times in this instance (the others work fine)
 		}
 
 		if (string(action) == "average") {
@@ -68,7 +73,12 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 			cout << "Average is: " << average;
 		}
 		if (string(action) == "largest") {
-
+			for (int a = 0; a < size; a++) {
+				if (array[a] > largest) {
+					largest = array[a];
+				}
+			}
+			cout << "Largest number: " << largest;
 		}
 		if (string(action) == "smallest") {
 			smallest = array[0];
@@ -89,9 +99,18 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 				}
 			}
 			cout << find << " repeats " << counter << " times";
+			cin.ignore(100, '\n'); //It prevents the men from running to times in this instance (the others work fine)
 		}
 		if (string(action) == "scale up") {
-			cout << "Scale up";
+			cout << "Enter a scale factor (positive numbers only): ";
+			cin >> scale;
+			for (int a = 0; a < size; a++) {
+				array[a] = pow(array[a], scale);
+			}
+			cout << "Scaled-up array: ";
+			for (int a = 0; a < size; a++) {
+				cout << array[a] << ' ';
+			}
 		}
 		if (string(action) == "reverse") {
 			for (int a = 0; a < size; a++) {
@@ -130,6 +149,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 			for (int a = 0; a < size; a++) {
 				cin >> array[a];
 			}
+			cin.ignore(100, '\n'); //It prevents the men from running to times in this instance (the others work fine)
 		}
 
 			if (string(action) == "exit") {
@@ -137,7 +157,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 			}
 
 			cout << "\n" << endl;
-			cin.ignore(100, '\n');
+			
 		}
 
 	}
