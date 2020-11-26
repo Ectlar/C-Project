@@ -37,7 +37,7 @@ int main() {
 	while (true) {
 
 		cout << R"(Please choose one of the following actions:
-DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVERSE, ZERO BASE, EXIT
+DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVERSE, ZERO BASE, NEW ARRAY, EXIT
 : )";
 		cin.getline(action, sizeof(action));
 		for (int a = 0; a < strlen(action); a++) {
@@ -46,7 +46,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 		}
 
 		if (string(action) == "display") {
-
+			
 		}
 
 		if (string(action) == "total") {
@@ -60,7 +60,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 		}
 
 		if (string(action) == "average") {
-			
+
 			for (int i = 0; i < size; i++) {
 				average = average + array[i];
 				counter++;
@@ -88,7 +88,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 					counter++;
 				}
 			}
-			cout << find<< " repeats " << counter<<" times";
+			cout << find << " repeats " << counter << " times";
 		}
 		if (string(action) == "scale up") {
 			cout << "Scale up";
@@ -99,7 +99,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 				b--;
 
 			}
-			cout << "The reversed array is:" << endl;
+			cout << "The reversed array is: ";
 			for (int a = 0; a < size; a++) {
 				cout << " " << array2[a];
 			}
@@ -111,7 +111,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 					smallest = array[i];
 				}
 			}
-			cout << "\n"<<"smallest: " << smallest << "\n";
+			cout << "\n" << "smallest: " << smallest << "\n";
 			for (int i = 0; i < size; i++) {
 				if (array[i] == smallest) {
 					array[i] = 0;
@@ -121,12 +121,22 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 				cout << array[i] << " ";
 			}
 		}
-		
-		if (string(action) == "exit") {
-			break;
+		if (string(action) == "new array") {
+			cout << "Enter size of array: " << endl;
+			cin >> size;
+			array = new int[size];
+			cout << "Enter array elements: " << endl;
+
+			for (int a = 0; a < size; a++) {
+				cin >> array[a];
+			}
 		}
 
-		cout << "\n" << endl;
-	}
+			if (string(action) == "exit") {
+				break;
+			}
 
-}
+			cout << "\n" << endl;
+		}
+
+	}
