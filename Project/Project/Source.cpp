@@ -127,20 +127,24 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 
 		}
 		if (string(action) == "zero base") {
-			smallest = array[0];
+			for (int a = 0; a < size; a++) {
+				array2[a] = array[a];
+			}
+		
+			smallest = array2[0];
 			for (int i = 0; i < size; i++) {
-				if (array[i] < smallest) {
-					smallest = array[i];
+				if (array2[i] < smallest) {
+					smallest = array2[i];
 				}
 			}
 			cout << "\n" << "smallest: " << smallest << "\n";
 			for (int i = 0; i < size; i++) {
-				if (array[i] == smallest) {
-					array[i] = 0;
+				if (array2[i] == smallest) {
+					array2[i] = 0;
 				}
 			}
 			for (int i = 0; i < size; i++) {
-				cout << array[i] << " ";
+				cout << array2[i] << " ";
 			}
 		}
 		if (string(action) == "new array") {
