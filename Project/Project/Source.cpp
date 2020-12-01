@@ -98,19 +98,22 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 				}
 			}
 			cout << find << " repeats " << counter << " times";
+			cin.ignore(100, '\n'); //It prevents the men from running to times in this instance (the others work fine)
 		}
 		if (string(action) == "scale up") {
-			cout << "Enter a scale factor: ";
-    			cin >> scale;
+			cout << "Enter a scale factor (positive numbers only): ";
+			cin >> scale;
 			for (int a = 0; a < size; a++) {
-				array[a] = (array[a] * scale);
+				array2[a] = array[a];
+				array2[a] = array2[a] * scale;
 			}
 			cout << "Scaled-up array: ";
 			for (int a = 0; a < size; a++) {
-				cout << array[a] << ' ';
+				cout << array2[a] << ' ';
 			}
 		}
 		if (string(action) == "reverse") {
+			b = size;
 			for (int a = 0; a < size; a++) {
 				array2[b - 1] = array[a];
 				b--;
@@ -120,6 +123,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 			for (int a = 0; a < size; a++) {
 				cout << " " << array2[a];
 			}
+
 		}
 		if (string(action) == "zero base") {
 			smallest = array[0];
@@ -147,14 +151,15 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 			for (int a = 0; a < size; a++) {
 				cin >> array[a];
 			}
+			cin.ignore(100, '\n'); //It prevents the men from running to times in this instance (the others work fine)
 		}
 
-			if (string(action) == "exit") {
-				break;
-			}
-
-			cout << "\n" << endl;
-			cin.ignore(100, '\n');
+		if (string(action) == "exit") {
+			break;
 		}
+
+		cout << "\n" << endl;
 
 	}
+
+}
