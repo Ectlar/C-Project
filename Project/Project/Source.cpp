@@ -100,14 +100,14 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 			cout << find << " repeats " << counter << " times";
 		}
 		if (string(action) == "scale up") {
-			cout << "Enter a scale factor (positive numbers only): ";
-			cin >> scale;
-			for (int a = 0; a < size; a++) {
-				array[a] = pow(array[a], scale);
+			cout << "Enter a scale factor: ";
+    			cin >> scale;
+			for (int i = 0; i < n; i++) {
+				array[i] = (array[i] * scale);
 			}
 			cout << "Scaled-up array: ";
-			for (int a = 0; a < size; a++) {
-				cout << array[a] << ' ';
+			for (int i = 0; i < n; i++) {
+				cout << array[i] << ' ';
 			}
 		}
 		if (string(action) == "reverse") {
