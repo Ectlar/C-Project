@@ -69,7 +69,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 				average = average + array[i];
 				counter++;
 			}
-			cout << "Average is: " << average;
+			cout << "Average is: " << average / counter;
 		}
 		if (string(action) == "largest") {
 			for (int a = 0; a < size; a++) {
@@ -111,6 +111,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 			}
 		}
 		if (string(action) == "reverse") {
+			b = size;
 			for (int a = 0; a < size; a++) {
 				array2[b - 1] = array[a];
 				b--;
