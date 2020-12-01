@@ -111,6 +111,7 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 			for (int a = 0; a < size; a++) {
 				cout << array2[a] << ' ';
 			}
+			cin.ignore(100, '\n');
 		}
 		if (string(action) == "reverse") {
 			b = size;
