@@ -102,12 +102,12 @@ DISPLAY, TOTAL, AVERAGE, LARGEST,SMALLEST, OCCURRENCES OF VALUE, SCALE UP, REVER
 		if (string(action) == "scale up") {
 			cout << "Enter a scale factor: ";
     			cin >> scale;
-			for (int i = 0; i < n; i++) {
-				array[i] = (array[i] * scale);
+			for (int a = 0; a < size; a++) {
+				array[a] = (array[a] * scale);
 			}
 			cout << "Scaled-up array: ";
-			for (int i = 0; i < n; i++) {
-				cout << array[i] << ' ';
+			for (int a = 0; a < size; a++) {
+				cout << array[a] << ' ';
 			}
 		}
 		if (string(action) == "reverse") {
